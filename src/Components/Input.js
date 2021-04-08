@@ -15,4 +15,5 @@ export const Input = ({ inputVal, speechedTodo, updateTodo, isOn }) => {
 const Wrapper = styled.input`
   width: 80%;
   padding: 10px;
+  margin-bottom: 7px;
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecognizer } from "./Hooks/useRecognizer";
 import styled from "styled-components";
 import { Input } from "./Components/Input";
@@ -15,6 +15,30 @@ const App = () => {
     startRecognizer,
     endRecognizer,
   ] = useRecognizer();
+
+  useEffect(() => {
+    // if (!speechedTodo) {
+    //   return;
+    // }
+
+    // if (speechedTodo === "") {
+    //   return;
+    // }
+
+    if (order === "추가") {
+      console.log("추가됨");
+      if (speechedTodo) {
+        setTodos((prev) => [
+          ...prev,
+          {
+            id: todos.length + 1,
+            content: speechedTodo,
+            checked: false,
+          },
+        ]);
+      }
+    }
+  }, [order]);
 
   const updateTodo = (evt) => {
     setInputVal(evt.target.value);
@@ -33,30 +57,6 @@ const App = () => {
       setInputVal("");
     }
   };
-
-  // if (text) {
-  //   console.log("okay?");
-  //   setTodos((prev) => [
-  //     ...prev,
-  //     {
-  //       id: todos.length + 1,
-  //       content: text,
-  //       checked: false,
-  //     },
-  //   ]);
-  // }
-  if (order === "추가") {
-    console.log("추가됨");
-    setTodos((prev) => [
-      ...prev,
-      {
-        id: todos.length + 1,
-        content: speechedTodo,
-        checked: false,
-      },
-    ]);
-    setInputVal("");
-  }
 
   return (
     <Wrapper>
