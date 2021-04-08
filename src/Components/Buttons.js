@@ -4,13 +4,13 @@ import styled from "styled-components";
 export const Buttons = ({ addTodo, isOn, startRecognizer, endRecognizer }) => {
   return (
     <Wrapper>
-      <MicButton onClick={startRecognizer} isOn={isOn} type="button">
+      <MicButton onClick={() => startRecognizer()} isOn={isOn} type="button">
         <img
           alt="mic"
           src={isOn ? "./images/mic-on.png" : "./images/mic.png"}
         />
       </MicButton>
-      <SubmitButton onClick={addTodo} type="submit">
+      <SubmitButton onClick={() => addTodo()} type="submit">
         Add
       </SubmitButton>
     </Wrapper>
