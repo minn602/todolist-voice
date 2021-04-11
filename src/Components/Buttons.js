@@ -22,11 +22,17 @@ const Wrapper = styled.div`
 `;
 
 const MicButton = styled.button`
-  padding: 3px 5px;
+  width: 50px;
+  height: 30px;
+  padding: 5px 10px;
   margin-right: 7px;
-  background-color: ${(props) => (props.isOn ? "palevioletred" : "#fff")};
-  border: 2px solid palevioletred;
+  background: ${(props) =>
+    props.isOn ? "#DF88A5" : "rgba(255, 255, 255, 0.7)"};
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
 
   &:focus {
     outline: none;

@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    background: linear-gradient(60deg,#D08CBD 3%,#FAC2B4 25%,#FED9B2 45%,#A9C2E5 55%,#F7BFC0 94%);
     overflow: hidden;
   }
   input, button {

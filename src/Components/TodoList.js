@@ -19,6 +19,11 @@ export const TodoList = ({ todos }) => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  color: gray;
+
+  input {
+    margin-right: 10px;
+  }
 `;
 
 const Content = styled.p`
